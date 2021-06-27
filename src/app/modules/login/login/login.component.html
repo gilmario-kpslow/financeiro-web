@@ -1,0 +1,25 @@
+<main class="container-fluid vh-100 justify-content-center">
+  <div class="row justify-content-center vh-100">
+    <div class="col-xxl-4 col-xl-4 col-lg-5 col-md-6 col-sm-8 align-self-center">
+      <section class="rounded-3">
+        <form [formGroup]="form">
+        <div class="row m-5">
+          <div class="col-12 mt-5 text-uppercase text-white">
+            LOGIN
+          </div>
+          <div class="col-12 mt-5">
+            <input type="text" formControlName="username" required class="form-control" placeholder="Usuário">
+          </div>
+          <div class="col-12 mt-5">
+            <input type="password" formControlName="password" required class="form-control" placeholder="Senha">
+          </div>
+          <div class="col-12 mt-4 mb-5 border-top pt-4">
+            <button class="btn btn-outline-light text-uppercase w-50" type="button" (click)="login()"> Login</button>
+            <button class="btn btn-outline-light text-uppercase w-50" type="button" routerLink="/cadastro"> Registro</button>
+          </div>
+        </div>
+      </form>
+      </section>
+    </div>
+  </div>
+</main>
