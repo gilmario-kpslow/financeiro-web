@@ -1,9 +1,9 @@
 {
   "name": "financeiro-web",
-  "version": "0.0.0",
+  "version": "1.0.0-SNAPSHOT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

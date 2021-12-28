@@ -6,7 +6,7 @@ import { AplicacaoService } from '../../core/application/aplicacao.service';
 @Component({
   selector: 'app-menu-lateral',
   templateUrl: './menu-lateral.component.html',
-  styleUrls: ['./menu-lateral.component.scss']
+  styleUrls: ['./menu-lateral.component.css']
 })
 export class MenuLateralComponent implements OnInit {
 

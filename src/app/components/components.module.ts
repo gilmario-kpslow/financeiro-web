@@ -5,12 +5,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
 import { MensagensComponent } from './mensagens/mensagens.component';
 import { MensagemContainerComponent } from './mensagens/mensagem-container/mensagem-container.component';
+import { LoaderComponent } from './loader/loader.component';
+import { SectionComponent } from './section/section.component';
 
 
 
 @NgModule({
   declarations: [
-    // LoaderComponent,
+    LoaderComponent,
     // DialogoComponent,
     // BaseListComponent,
     // BaseCadastroComponent,
@@ -22,7 +24,8 @@ import { MensagemContainerComponent } from './mensagens/mensagem-container/mensa
     MensagensComponent,
     // ActionButtonComponent,
     // DateParseDirective,
-    InputDefaultComponent
+    InputDefaultComponent,
+    SectionComponent
     // RapidPaginatorComponent,
     // CardListComponent,
     // CardListInfoComponent
@@ -32,7 +35,10 @@ import { MensagemContainerComponent } from './mensagens/mensagem-container/mensa
     MaterialModule,
     ReactiveFormsModule
   ], exports: [
-    InputDefaultComponent
+    InputDefaultComponent,
+    MensagemContainerComponent,
+    LoaderComponent,
+    SectionComponent
   ]
 })
 export class ComponentsModule { }

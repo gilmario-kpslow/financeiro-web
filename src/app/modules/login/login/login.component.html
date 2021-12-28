@@ -7,19 +7,23 @@
           <div class="col-12 mt-5 text-uppercase text-white">
             LOGIN
           </div>
-          <div class="col-12 mt-5">
-            <input type="text" formControlName="username" required class="form-control" placeholder="Usuário">
+          <div class="col-12">
+            <app-input-default formControlName="username" placeholder="Username" [maxlength]="50" [control]="username"></app-input-default>
           </div>
-          <div class="col-12 mt-5">
-            <input type="password" formControlName="password" required class="form-control" placeholder="Senha">
+          <div class="col-12">
+            <app-input-default formControlName="password" type="password" placeholder="Password"></app-input-default>
           </div>
           <div class="col-12 mt-4 mb-5 border-top pt-4">
             <button class="btn btn-outline-light text-uppercase w-50" type="button" (click)="login()"> Login</button>
-            <button class="btn btn-outline-light text-uppercase w-50" type="button" routerLink="/cadastro"> Registro</button>
+            <a class="btn btn-outline-light text-uppercase w-50" type="button" routerLink="/cadastro"> Registro</a>
           </div>
         </div>
       </form>
       </section>
+      <div style="text-align: center;">
+        <p>Versão: {{versaoFront}}</p>
+        <p>API: {{versaoApi?.versao}}</p>
+      </div>
     </div>
   </div>
 </main>

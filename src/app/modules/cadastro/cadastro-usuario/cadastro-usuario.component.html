@@ -7,19 +7,22 @@
           <div class="col-12 mt-5 text-uppercase text-white">
             CADASTRO
           </div>
-          <div class="col-12 mt-5">
+          <div class="col-12">
             <app-input-default formControlName="nome" placeholder="Nome" [maxlength]="255" minlangth="3" [required]="true"></app-input-default>
           </div>
-          <div class="col-12 mt-5">
+          <div class="col-12">
+            <app-input-default formControlName="nomeCompleto" placeholder="Nome completo" [maxlength]="255" minlangth="3" [required]="true"></app-input-default>
+          </div>
+          <div class="col-12">
             <app-input-default formControlName="email" placeholder="Email" [maxlength]="255" minlangth="3" [required]="true"></app-input-default>
           </div>
-          <div class="col-12 mt-5">
+          <div class="col-12">
             <app-input-default formControlName="username" placeholder="Nome de usuário" [maxlength]="40" minlangth="3" [required]="true"></app-input-default>
           </div>
-          <div class="col-12 mt-5">
+          <div class="col-12">
             <app-input-default formControlName="senha" type="password" placeholder="Senha" [maxlength]="40" minlangth="3" [required]="true"></app-input-default>
           </div>
-          <div class="col-12 mt-5">
+          <div class="col-12">
             <app-input-default formControlName="confirmar" type="password" placeholder="Confirmar senha" [maxlength]="40" minlangth="3" [required]="true"></app-input-default>
           </div>
           <div class="col-12 mt-4 mb-5 border-top pt-4">

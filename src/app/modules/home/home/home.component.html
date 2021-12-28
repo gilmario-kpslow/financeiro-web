@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="col-lg-4 col-xxl-3 mt-2" *ngFor="let item of items">
+    <app-home-card>
+      <a class="nav-link text-muted" [routerLink]="[item.link]">{{item.nome}}</a>
+    </app-home-card>
+  </div>
+</div>

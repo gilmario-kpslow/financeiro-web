@@ -1,6 +1,18 @@
-<p>layout works!</p>
-<a routerLink="login">Login</a>
-<a routerLink="login">Login</a>
-<button (click)="logout()" >Logout</button>
-<router-outlet></router-outlet>
-<p>layout end</p>
+<div class="d-flex flex-column max-height">
+  <app-header (clickEvent)="toogleNav()"></app-header>
+  <mat-sidenav-container class="flex-fill">
+    <mat-sidenav [mode]="mode" [fixedInViewport]="fixed" class="side-nav" [ngClass]="{'max-width': !mobile?.matches}" [opened]="open">
+      <app-menu-lateral></app-menu-lateral>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="container-fluid full-heigth" >
+        <div class="d-flex justify-content-center" >
+          <div class="wid-100 pt-3 flex-fill">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <app-footer></app-footer>
+</div>

@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, HostBinding, Optional, Self, ElementRef, OnInit } from '@angular/core';
-import { FormControl, NgControl, ControlValueAccessor } from '@angular/forms';
+import { FormControl, NgControl, ControlValueAccessor, AbstractControl } from '@angular/forms';
 import { MatFormFieldControl } from '@angular/material/form-field'
 import { Subject } from 'rxjs'
 import { FocusMonitor } from '@angular/cdk/a11y'
@@ -24,7 +24,10 @@ export class InputDefaultComponent implements MatFormFieldControl<string>, OnDes
   stateChanges = new Subject<void>()
   @Input()
   get value(): string {
-    return this.control.value
+    if(this.control) {
+      return this.control.value
+    }
+    return '';
   }
   set value(value: string) {
     this.writeValue(value)
@@ -60,7 +63,9 @@ export class InputDefaultComponent implements MatFormFieldControl<string>, OnDes
   }
   set disabled(dis) {
     this._disabled = dis
-    this._disabled ? this.control.disable() : this.control.enable()
+    if(this.control){
+      this._disabled ? this.control.disable() : this.control.enable()
+    }
     this.stateChanges.next()
   }
   private _disabled = false
@@ -102,7 +107,7 @@ export class InputDefaultComponent implements MatFormFieldControl<string>, OnDes
   }
 
   get empty() {
-    return !this.control.value
+    return !this.control || !this.control.value
   }
 
   ngOnDestroy() {
@@ -111,11 +116,11 @@ export class InputDefaultComponent implements MatFormFieldControl<string>, OnDes
   }
 
   mostraErro() {
-    return this.control.invalid && this.control.touched
+    return this.control && this.control.invalid && this.control.touched
   }
 
   erros(): string {
-    if(!this.control.errors) {
+    if(!this.control || !this.control.errors) {
       return ''
     }
     const erros = Object.keys(this.control.errors)
@@ -140,7 +145,10 @@ export class InputDefaultComponent implements MatFormFieldControl<string>, OnDes
   }
 
   writeValue(obj: any): void {
-    this.control.setValue(obj)
+    if(this.control) {
+      this.control.setValue(obj)
+    }
+
   }
   registerOnTouched(fn: any): void {
     this.onTouch = fn

@@ -1,5 +1,5 @@
 <mat-nav-list>
-  <a mat-list-item [routerLink]="i.rota" [routerLinkActive]="i.activeClass" *ngFor="let i of menu">
+  <a mat-list-item [routerLink]="i.rota" routerLinkActive="i.activeClass" *ngFor="let i of menu">
     <mat-icon>{{i.icone}}</mat-icon><span class="mat-nav-item"> {{i.nome}}</span>
   </a>
 </mat-nav-list>

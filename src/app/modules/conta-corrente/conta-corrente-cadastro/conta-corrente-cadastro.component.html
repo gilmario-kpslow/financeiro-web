@@ -1,0 +1,14 @@
+<app-section titulo="Cadastro de contacorrente">
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="col-12">
+        <app-input-default formControlName="nome" placeholder="Nome" [maxlength]="255" minlangth="3" [required]="true">
+        </app-input-default>
+      </div>
+      <div class="col-12 border-top mt-2 pt-3">
+        <a class="btn btn-outline-light text-uppercase" routerLink="/conta-corrente"> Voltar</a>
+        <button class="btn btn-outline-light text-uppercase" type="button" (click)="salvar()"> Salvar</button>
+      </div>
+    </div>
+  </form>
+</app-section>

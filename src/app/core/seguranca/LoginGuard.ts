@@ -12,7 +12,7 @@ export class LoginGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> {
     if(this.segurancaService.isLogado) {
       this.router.navigate(this.appService.menuConsts.home.rota)
-      return false
+      return true
     }
     return true;
   }
