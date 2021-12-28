@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  api: 'http://localhost:8080'
+  // api: 'http://localhost:8080'
+  api: 'https://8080-cyan-lizard-haac9mde.ws-us15.gitpod.io'
 };
 
 /*
