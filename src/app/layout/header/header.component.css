@@ -1,3 +1,4 @@
-.example-app-name{
+:host .app-name{
   text-transform: capitalize;
+  cursor: pointer;
 }

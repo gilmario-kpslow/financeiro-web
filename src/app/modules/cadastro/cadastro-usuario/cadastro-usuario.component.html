@@ -3,33 +3,36 @@
     <div class="col-xxl-8 col-xl-8 col-lg-9 col-md-12 col-sm-12 align-self-center">
       <section class="rounded-3">
         <form [formGroup]="form">
-        <div class="row m-5">
-          <div class="col-12 mt-5 text-uppercase text-white">
-            CADASTRO
+          <div class="row m-5">
+            <div class="col-12 mt-5 text-uppercase">
+              CADASTRO
+            </div>
+            <div class="col-12">
+              <app-input-default formControlName="nome" placeholder="Nome" [maxlength]="255" minlangth="3"
+                [required]="true"></app-input-default>
+            </div>
+            <div class="col-12">
+              <app-input-default formControlName="email" placeholder="Email" [maxlength]="255" minlangth="3"
+                [required]="true"></app-input-default>
+            </div>
+            <div class="col-12">
+              <app-input-default formControlName="username" placeholder="Nome de usuário" [maxlength]="40" minlangth="3"
+                [required]="true"></app-input-default>
+            </div>
+            <div class="col-12">
+              <app-input-default formControlName="password" type="password" placeholder="Senha" [maxlength]="40"
+                minlangth="3" [required]="true"></app-input-default>
+            </div>
+            <div class="col-12">
+              <app-input-default formControlName="confirmar" type="password" placeholder="Confirmar senha"
+                [maxlength]="40" minlangth="3" [required]="true"></app-input-default>
+            </div>
+            <div class="col-12 mt-4 mb-5 border-top pt-4">
+              <button class="btn btn-outline-success text-uppercase w-100" type="button" (click)="salvar()">
+                Salvar</button>
+            </div>
           </div>
-          <div class="col-12">
-            <app-input-default formControlName="nome" placeholder="Nome" [maxlength]="255" minlangth="3" [required]="true"></app-input-default>
-          </div>
-          <div class="col-12">
-            <app-input-default formControlName="nomeCompleto" placeholder="Nome completo" [maxlength]="255" minlangth="3" [required]="true"></app-input-default>
-          </div>
-          <div class="col-12">
-            <app-input-default formControlName="email" placeholder="Email" [maxlength]="255" minlangth="3" [required]="true"></app-input-default>
-          </div>
-          <div class="col-12">
-            <app-input-default formControlName="username" placeholder="Nome de usuário" [maxlength]="40" minlangth="3" [required]="true"></app-input-default>
-          </div>
-          <div class="col-12">
-            <app-input-default formControlName="senha" type="password" placeholder="Senha" [maxlength]="40" minlangth="3" [required]="true"></app-input-default>
-          </div>
-          <div class="col-12">
-            <app-input-default formControlName="confirmar" type="password" placeholder="Confirmar senha" [maxlength]="40" minlangth="3" [required]="true"></app-input-default>
-          </div>
-          <div class="col-12 mt-4 mb-5 border-top pt-4">
-            <button class="btn btn-outline-light text-uppercase w-100" type="button" (click)="salvar()"> Salvar</button>
-          </div>
-        </div>
-      </form>
+        </form>
       </section>
     </div>
   </div>

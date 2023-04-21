@@ -1,5 +1,6 @@
 <mat-form-field class="w-100">
-  <input [type]="type" class="text-light" matInput [formControl]="control" [maxlength]="maxlength" [minlength]="minlength" [placeholder]="placeholder"/>
+  <input [type]="type" matInput [formControl]="control" [maxlength]="maxlength" [minlength]="minlength"
+    [placeholder]="placeholder" />
   <mat-error *ngIf="mostraErro()">{{erros()}}</mat-error>
   <ng-content></ng-content>
 </mat-form-field>

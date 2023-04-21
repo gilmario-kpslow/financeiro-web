@@ -7,6 +7,7 @@ import { MensagensComponent } from './mensagens/mensagens.component';
 import { MensagemContainerComponent } from './mensagens/mensagem-container/mensagem-container.component';
 import { LoaderComponent } from './loader/loader.component';
 import { SectionComponent } from './section/section.component';
+import { CardComponent } from './card/card.component';
 
 
 
@@ -25,7 +26,8 @@ import { SectionComponent } from './section/section.component';
     // ActionButtonComponent,
     // DateParseDirective,
     InputDefaultComponent,
-    SectionComponent
+    SectionComponent,
+    CardComponent
     // RapidPaginatorComponent,
     // CardListComponent,
     // CardListInfoComponent

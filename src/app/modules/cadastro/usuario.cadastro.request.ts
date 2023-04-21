@@ -1,7 +1,6 @@
-export interface UsuarioCadastroRequest{
+export interface UsuarioCadastroRequest {
   nome: string
-  nomeCompleto: string
   email: string
-  senha: string
+  password: string
   username: string
 }

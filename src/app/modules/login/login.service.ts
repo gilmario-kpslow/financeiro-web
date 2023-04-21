@@ -7,11 +7,11 @@ import { LoginRequest } from './login.request';
 
 @Injectable()
 export class LoginService {
-  url = `${environment.api}/autenticar`
+  url = `${environment.api}`
 
   constructor(private http: HttpClient) { }
 
   logar(req: LoginRequest): Observable<UsuarioAutenticado> {
-    return this.http.post<UsuarioAutenticado>(`${this.url}`, req)
+    return this.http.post<UsuarioAutenticado>(`${this.url}/auth/login`, req)
   }
 }
