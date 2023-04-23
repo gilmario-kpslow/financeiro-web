@@ -8,18 +8,19 @@ import { SegurancaService } from './seguranca.service';
 })
 export class AuthInterceptor implements HttpInterceptor {
 
-  constructor(private injector: Injector){}
+  constructor(private injector: Injector) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-      const store =  this.injector.get(SegurancaService);
-      if (store.isLogado) {
-          const requestAuth = req.clone(
-              { setHeaders:
-                  { Authorization: store.getToken() }
-              });
-          return next.handle(requestAuth);
-      }
-      return next.handle(req);
+    const store = this.injector.get(SegurancaService);
+    if (store.isLogado) {
+      const requestAuth = req.clone(
+        {
+          setHeaders:
+            { Authorization: `Bearer ${store.getToken()}` }
+        });
+      return next.handle(requestAuth);
+    }
+    return next.handle(req);
   }
 
 }

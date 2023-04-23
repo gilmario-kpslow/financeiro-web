@@ -1,0 +1,85 @@
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="onSort($event)">
+  <!-- Position Column -->
+  <ng-container [matColumnDef]="c.campo" *ngFor="let c of colunas">
+    <th class="table-coluna" [ngClass]="c.styleClass" mat-header-cell *matHeaderCellDef>{{c.nome}}</th>
+    <td mat-cell *matCellDef="let element">{{getValueColuna(element, c)}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="acoes">
+    <th class="table-coluna" style="width: 75px">#</th>
+    <!-- <td mat-cell *matCellDef="let element">{{getValueColuna(element, c)}}</td> -->
+    <!-- <td style="width: 75px" *ngIf="!noAction" class="table-coluna">
+      <button pButton type="button" *ngIf="!config.showSelect" icon="pi pi-fw pi-list" #btn
+        (click)="showMenu(domain);menu.toggle($event)"></button>
+      <button pButton type="button" *ngIf="config.showSelect" icon="pi pi-fw pi-check" #btn
+        (click)="showMenu(domain);"></button>
+    </td> -->
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="getColunasVisiveis()"></tr>
+  <tr mat-row *matRowDef="let row; columns: getColunasVisiveis();"></tr>
+  <mat-paginator [pageSizeOptions]="sizeOptions" aria-label="Select page of users"></mat-paginator>
+</table>
+
+<!-- <p-toolbar>
+  <div class="p-toolbar-group-left card-titulo">
+    {{ titulo }}
+  </div>
+  <div class="p-toolbar-group-right">
+    <p-button *ngIf="config.showIncluir" title="Novo" (onClick)="novo()" icon="pi pi-plus-circle" class="pr-1">
+    </p-button>
+    <p-button *ngIf="config.showLimpar" title="Limpar" (onClick)="limpar()" icon="pi pi-file" class="pr-1"></p-button>
+    <p-button *ngIf="config.showPesquisar" title="Pesquisar" (onClick)="pesquisar()" icon="pi pi-search"
+      class="pr-1"></p-button>
+    <p-button *ngIf="config.showImprimir" title="Imprimir" (onClick)="imprimir()" icon="pi pi-print"></p-button>
+  </div>
+</p-toolbar> -->
+
+<!-- <p-card *ngIf="config.showContent">
+  <ng-content></ng-content>
+</p-card> -->
+<!-- <div class="mt-2"></div>
+<p-tieredMenu #menu [model]="items" [popup]="true" appendTo="body" [autoDisplay]="true"></p-tieredMenu>
+<p-table #dataTable [value]="lista" (onSort)="sort($event)" [paginator]="true" [rows]="rows"
+  (onLazyLoad)="paginarList($event)" [lazy]="true" [totalRecords]="totalRecords" styleClass="striped"
+  [loading]="loading" [rowsPerPageOptions]="[10,20,30,40,50,100,150,200]">
+
+  <ng-template pTemplate="header">
+    <tr>
+      <th [pSortableColumn]="coluna.campo" class="table-coluna" *ngFor="let coluna of colunas"
+        [ngClass]="coluna.styleClass" [style]="coluna.style">
+        {{coluna.label}} <p-sortIcon field="coluna.campo"></p-sortIcon>
+      </th>
+      <th *ngIf="!noAction" class="table-coluna" style="width: 75px">#</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-domain>
+    <tr>
+      <td *ngFor="let coluna of colunas" class="table-coluna" [ngClass]="coluna.styleClass" [style]="coluna.style">
+        {{getValueColuna(domain, coluna)}}
+      </td>
+      <td style="width: 75px" *ngIf="!noAction" class="table-coluna">
+        <button pButton type="button" *ngIf="!config.showSelect" icon="pi pi-fw pi-list" #btn
+          (click)="showMenu(domain);menu.toggle($event)"></button>
+        <button pButton type="button" *ngIf="config.showSelect" icon="pi pi-fw pi-check" #btn
+          (click)="showMenu(domain);"></button>
+      </td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="emptymessage" let-columns>
+    <tr>
+      <td [attr.colspan]="colunas.length + 1">
+        Nenhum registro encontrado!
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+    <div class="text-left">
+      Total de Registros: {{ totalRecords }}
+    </div>
+  </ng-template>
+</p-table>
+
+<p-confirmDialog acceptLabel="SIM" rejectLabel="NÃO" header="Excluir registro"
+  icon="pi pi-exclamation-triangle"></p-confirmDialog> -->

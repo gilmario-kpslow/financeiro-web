@@ -8,6 +8,7 @@ import { MensagemContainerComponent } from './mensagens/mensagem-container/mensa
 import { LoaderComponent } from './loader/loader.component';
 import { SectionComponent } from './section/section.component';
 import { CardComponent } from './card/card.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -35,6 +36,7 @@ import { CardComponent } from './card/card.component';
   imports: [
     CommonModule,
     MaterialModule,
+    MatCardModule,
     ReactiveFormsModule
   ], exports: [
     InputDefaultComponent,

@@ -4,7 +4,6 @@ import { CadastroRoutingModule } from './cadastro-routing.module';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UsuarioService } from '../../core/usuario/usuario.service';
-import { HttpClientModule } from '@angular/common/http';
 import { ComponentsModule } from '../../components/components.module';
 
 
@@ -15,7 +14,6 @@ import { ComponentsModule } from '../../components/components.module';
   imports: [
     CommonModule,
     CadastroRoutingModule,
-    HttpClientModule,
     ReactiveFormsModule,
     ComponentsModule
   ],
