@@ -14,7 +14,6 @@ export class FooterComponent implements OnInit {
   constructor(private service: VersaoService) { }
 
   ngOnInit() {
-    this.service.getVersaoApi().subscribe((v: any) => this.versaoApi = v)
-    // this.versaoApp = this.service.getVersaoApp();
+    this.service.getVersaoApi().subscribe({ next: (v: any) => this.versaoApi = v, error: (e) => this.versaoApi = { versao: '1.0.0' } })
   }
 }

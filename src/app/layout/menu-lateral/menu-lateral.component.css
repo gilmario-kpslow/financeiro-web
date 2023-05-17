@@ -1,3 +1,45 @@
-.menu-ativo {
+:host .menu-ativo {
   background-color: rgba(0, 0, 0, 0.8) !important;
 }
+
+:host .menu-icone{
+
+}
+
+:host .tree-invisible {
+  display: none;
+}
+
+:host .tree ul,
+:host .tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+:host .tree li:hover {
+  background-color: aqua;
+}
+
+:host .tree .mat-nested-tree-node div[role=group] {
+  padding-left: 20px;
+}
+
+:host .tree div[role=group]>.mat-tree-node {
+  padding-left: 20px;
+}
+
+:host .mat-tree-node {
+  min-height: 25px !important;
+  background-color: var(--bs-purple);
+}
+
+:host .mat-tree-node:hover {
+  background-color: var(--bs-danger);
+}
+/*
+:host .botao {
+  width: 24px;
+  height: 24px;
+  padding: 0px;
+} */

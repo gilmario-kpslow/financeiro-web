@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   password: FormControl
   versaoApi: any
   versaoFront = version
-  constructor(fb: FormBuilder,private service: LoginService,
+  constructor(fb: FormBuilder, private service: LoginService,
     private segurancaService: SegurancaService,
     private versaoService: VersaoService,
     private appService: AplicacaoService, private router: Router) {
@@ -31,8 +31,10 @@ export class LoginComponent implements OnInit {
     this.username = this.form.get('username') as FormControl;
     this.password = this.form.get('password') as FormControl;
 
-    this.versaoService.getVersaoApi().subscribe((v:any) => {
-      this.versaoApi = v;
+    this.versaoService.getVersaoApi().subscribe({
+      next: (v) => {
+        this.versaoApi = v;
+      }, error: (e) => this.versaoApi = { version: '1.0.0' }
     })
 
   }
@@ -41,7 +43,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if(this.form.valid) {
+    if (this.form.valid) {
       processForm(this.form, () => {
         this.service.logar(this.form.value).subscribe(u => {
           this.segurancaService.setUsuarioLogado(u)

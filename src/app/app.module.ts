@@ -26,6 +26,7 @@ import { MatListModule } from '@angular/material/list';
 import { MenuLateralComponent } from './layout/menu-lateral/menu-lateral.component';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthInterceptor } from './core/seguranca/token-http.interceptor';
+import { MatTreeModule } from '@angular/material/tree';
 
 registerLocaleData(locatePt);
 
@@ -52,7 +53,8 @@ registerLocaleData(locatePt);
     MatMenuModule,
     MatExpansionModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTreeModule
   ],
   providers: [
     LoginGuard,
